@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function ContactList({contacts, onDelete}) {
 
@@ -18,6 +19,7 @@ function ContactList({contacts, onDelete}) {
               <td>
                 <button onClick={() => handleEdit(contact.id)}>Modifer</button>
                 <button onClick={() => onDelete(contact.id)}>Supprimer</button>
+                {/* <Link to={`/edit/${contact.id}`}> Modifier </Link> */}
               </td>
             </tr>
           ))
