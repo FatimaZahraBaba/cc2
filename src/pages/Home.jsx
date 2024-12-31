@@ -10,7 +10,7 @@ function Home() {
 
   const getContacts = async () => {
     try {
-      const url = '/contacts';
+      const url = '/contacts'; 
       const resp = await axios.get(url);
       setContacts(resp.data);
     } catch (e) {
@@ -21,9 +21,6 @@ function Home() {
     getContacts();
   }, [])
 
-  const handleEdit = (id) => {
-    navigate('/edit');
-  }
 
   const handleDelete = (id) {
     setContacts(contacts.filter(contact => contact.id !== id));
@@ -31,7 +28,7 @@ function Home() {
 
   return (
     <>
-      <ContactList contacts={contacts} onDelete={handleDelete} onEdit={handleEdit} />
+      <ContactList contacts={contacts} onDelete={handleDelete} />
     </>
   )
 }
