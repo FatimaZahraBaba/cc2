@@ -20,11 +20,11 @@ function ContactForm({initialData = {}, onSubmit}) {
   return (
     <>
       <form>
-        <input type="text" value={nom} onChange={(e) => setContact({...contact, nom : e.target.value})} placeholder='Nom'/>
+        <input type="text" value={contact.nom} onChange={(e) => setContact({...contact, nom : e.target.value})} placeholder='Nom'/>
         { !contact.nom && <span>le champ "Nom" est obligatoire</span> }
-        <input type="email" value={email} onChange={(e) => setContact({...contact, email : e.target.value})} placeholder='Email'/>
+        <input type="email" value={contact.email} onChange={(e) => setContact({...contact, email : e.target.value})} placeholder='Email'/>
         { !contact.email && <span>le champ "Email" est obligatoire</span>}
-        <input type="tel" value={numTel} onChange={(e) => setContact({...contact, numTel : e.target.value})} placeholder='Numero de telephone'/>
+        <input type="tel" value={contact.numTel} onChange={(e) => setContact({...contact, numTel : e.target.value})} placeholder='Numero de telephone'/>
         { !contact.numTel && <span>le champ "Numero de telephone" est obligatoire</span>}
         <button onClick={handleSubmit} disabled={!contact.nom || !contact.email || !contact.numTel}>Soumettre</button>
       </form>

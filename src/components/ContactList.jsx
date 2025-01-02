@@ -18,8 +18,8 @@ function ContactList({contacts, onDelete}) {
               <td>{contact.numTel}</td>
               <td>
                 <button onClick={() => handleEdit(contact.id)}>Modifer</button>
-                <button onClick={() => onDelete(contact.id)}>Supprimer</button>
-                {/* <Link to={`/edit/${contact.id}`}> Modifier </Link> */}
+                {/* <button onClick={() => onDelete(contact.id)}>Supprimer</button> */}
+                <Link to={`/edit/${contact.id}`}> Modifier </Link>
               </td>
             </tr>
           ))
