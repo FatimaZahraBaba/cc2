@@ -13,7 +13,7 @@ function EditContact() {
     const url = `/contacts/${id}`;
     const resp = await axios.get(url);
     setContact(resp.data);
-  }, [id])
+  }, [])
 
   const updateContact = async (contact) => {
     const url = `/contacts/${id}`;

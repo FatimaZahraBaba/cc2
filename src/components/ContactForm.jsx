@@ -8,12 +8,12 @@ function ContactForm({initialData = {}, onSubmit}) {
 
   const handleSubmit = (e) => {
     e.prevent.default();
-    if(!contact.nom || !contact.email || !contact.numTel ) {
-      alert('Le champ ne peut pas être vide ou contenir uniquement des espaces.');
-      return;
-    } else {
+    // if(!contact.nom || !contact.email || !contact.numTel ) {
+    //   alert('Le champ ne peut pas être vide ou contenir uniquement des espaces.');
+    //   return;
+    // } else {
       onSubmit(contact);
-    }
+    // }
   }
 
 
@@ -21,9 +21,12 @@ function ContactForm({initialData = {}, onSubmit}) {
     <>
       <form>
         <input type="text" value={nom} onChange={(e) => setContact({...contact, nom : e.target.value})} placeholder='Nom'/>
+        { !contact.nom && <span>le champ "Nom" est obligatoire</span> }
         <input type="email" value={email} onChange={(e) => setContact({...contact, email : e.target.value})} placeholder='Email'/>
+        { !contact.email && <span>le champ "Email" est obligatoire</span>}
         <input type="tel" value={numTel} onChange={(e) => setContact({...contact, numTel : e.target.value})} placeholder='Numero de telephone'/>
-        <button onClick={handleSubmit}>Soumettre</button>
+        { !contact.numTel && <span>le champ "Numero de telephone" est obligatoire</span>}
+        <button onClick={handleSubmit} disabled={!contact.nom || !contact.email || !contact.numTel}>Soumettre</button>
       </form>
     </> 
   )
