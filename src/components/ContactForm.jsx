@@ -8,7 +8,7 @@ function ContactForm({initialData = {}, onSubmit}) {
 
   const handleSubmit = (e) => {
     e.prevent.default();
-    if(!nom || !email || !numTel ) {
+    if(!contact.nom || !contact.email || !contact.numTel ) {
       alert('Le champ ne peut pas être vide ou contenir uniquement des espaces.');
       return;
     } else {
